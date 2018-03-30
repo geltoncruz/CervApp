@@ -10,16 +10,19 @@
 
 <ion-content padding>
 
-  <h3>Welcome to your first Ionic app!</h3>
-
+  <h3>Welcome CervasApp!</h3>
   <p>
-    This starter project is our way of helping you get a functional app running in record time.
+    O seu aplicativo comparativo de preços de cervejas
   </p>
-  <p>
-    Follow along on the tutorial section of the Ionic docs!
-  </p>
+  <p>Clique sobre cada marca para visualizar detalhes.</p>
+  <ion-list>
+    <button ion-item *ngFor="let b of bears">
+      {{ b.name }}
+    </button>
+  </ion-list>
   <p>
     <button ion-button color="primary" menuToggle>Toggle Menu</button>
+    <button ion-button color="primary" (click)="goToTestePage()">Ir para testePage</button>
   </p>
 
 </ion-content>

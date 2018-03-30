@@ -4,5 +4,11 @@
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
-  }
+  },
+  "proxies": [
+    {
+      "path": "/cerva",
+      "proxyUrl": "http://184.171.245.138/~ladimacom/app"
+    }
+  ]
 }
