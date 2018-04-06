@@ -16,8 +16,8 @@
   </p>
   <p>Clique sobre cada marca para visualizar detalhes.</p>
   <ion-list>
-    <button ion-item *ngFor="let b of bears">
-      {{ b.name }}
+    <button ion-item *ngFor="let b of bears" (click)="getBeerDetails(b.id)">
+      {{ b.nome }}
     </button>
   </ion-list>
   <p>

@@ -13,13 +13,15 @@ export class HelloIonicPage {
   private basePath:string = '/cerva';
   public bears: Array<{}>;
 
+  public url:string;
+
   constructor(public navCtrl: NavController, public http: Http, public _platform:Platform ) {
 
     if(this._platform.is('Cordova')){
-        this.basePath = 'http://184.171.245.138/~ladimacom/app/bears.json';
+        this.basePath = 'http://localhost:5000/api';
     }
 
-    this.http.get(this.basePath + '/bears.json')
+    this.http.get(this.basePath + '/todo')
               .map(res => res.json())
               .subscribe(data =>{
                 this.bears = data;
@@ -28,5 +30,13 @@ export class HelloIonicPage {
   }
   goToTestePage(){
     this.navCtrl.push(TestPage)
+  }
+  getBeerDetails(id){
+    // alert(id);
+    this.url ='http://localhost:5000/api/todo/';
+    this.navCtrl.push(TestPage, {
+      'beer_id' : id,
+      'api_url' : this.url
+    });
   }
 }
