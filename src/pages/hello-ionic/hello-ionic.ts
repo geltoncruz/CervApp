@@ -33,7 +33,7 @@ export class HelloIonicPage {
   }
   getBeerDetails(id){
     // alert(id);
-    this.url ='http://localhost:5000/api/todo/';
+    this.url ='http://localhost:5000/api/cerveja/';
     this.navCtrl.push(TestPage, {
       'beer_id' : id,
       'api_url' : this.url

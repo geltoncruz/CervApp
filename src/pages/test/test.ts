@@ -23,14 +23,14 @@ export class TestPage {
     let basePath = this.navParams.get('api_url')
     let beer_id = this.navParams.get('beer_id');
     // alert(basePath +`/` beer_id);
-    alert(`${basePath}/${beer_id}`);
+    //alert(`${basePath}/${beer_id}`);
     let url = `${basePath}${beer_id}`;
+
     this.http.get(url)
-    .map(res => res.json())
-    .subscribe(data =>{
-      console.log(data);
-      let cervaItem = data;
-    });
+              .map(res => res.json())
+              .subscribe(data =>{
+                console.log(data);
+              });
 
   }
 
